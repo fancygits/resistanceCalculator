@@ -17,8 +17,8 @@ module.exports = function(config) {
     files: [
 		'includes/angular.min.js',
 		'includes/angular-route.min.js',
-		'includes/angular-mocks.js',
-		'app/js/resistorCalculator.js',
+		'includes/angular-mocks.min.js',
+		'app/js/resistorCalculatorApp.js',
 		'tests/unit/resistorControllerGetAuthorSpec.js'
     ],
 
