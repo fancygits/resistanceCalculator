@@ -2,19 +2,19 @@ Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
 				echo 'Building...'
                 sh 'npm install'
             }
         }
-		stage('test') {
+		stage('Test') {
 			steps {
 				echo 'Testing...'
 				sh 'npm test'
 			}
 		}
-		stage('deploy') {
+		stage('Deploy') {
 			steps {
 				echo 'Deploying...'
 				echo 'Not yet implemented'
@@ -29,10 +29,10 @@ pipeline {
             echo 'I succeeeded!'
         }
         unstable {
-            echo 'I am unstable :/'
+            echo 'I am unstable'
         }
         failure {
-            echo 'I failed :('
+            echo 'I failed'
         }
         changed {
             echo 'Things were different before...'
