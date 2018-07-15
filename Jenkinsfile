@@ -21,11 +21,13 @@ pipeline {
 		stage('E2E Test') {
 			steps {
 				echo 'E2E Testing...'
-				sh 'sudo webdriver-manager update'
+				sh 'webdriver-manager update'
 				sh 'webdriver-manager start &'
-				sh 'sudo docker build --tag jenkins_image docker_testenv/.'
-				sh 'sudo docker run --name=testenv -d -v $WORKSPACE/app:/app -p 8000:8000 jenkins_image'
+				sh 'docker build --tag jenkins_image docker_testenv/.'
+				sh 'docker run --name=testenv -d -v $WORKSPACE/app:/app -p 8000:8000 jenkins_image'
 				sh 'protractor protractor.conf.js'
+				sh 'docker stop testenv'
+				sh 'docker rm testenv'
 			}
 		}
 		stage('Deploy') {
