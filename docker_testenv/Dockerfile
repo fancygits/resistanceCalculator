@@ -4,7 +4,7 @@ FROM node:8
 
 RUN npm install http-server -g
 
-WORKDIR /app
+WORKDIR /vagrant/bitbucket/cs6261_project5/
 
 ENTRYPOINT ["http-server", "-p", "8000", "-c-1"]
 CMD ["/app"]

@@ -1,5 +1,10 @@
 pipeline {
     agent any
+	
+	environment {
+		WORKSPACE = '/vagrant/bitbucket/cs6261_project5'
+	}
+	
     stages {
         stage('Build') {
             steps {
@@ -7,10 +12,20 @@ pipeline {
                 sh 'npm install'
             }
         }
-		stage('Test') {
+		stage('Unit Test') {
 			steps {
-				echo 'Testing...'
+				echo 'Unit Testing...'
 				sh 'npm test'
+			}
+		}
+		stage('E2E Test') {
+			steps {
+				echo 'E2E Testing...'
+				sh 'sudo webdriver-manager update'
+				sh 'webdriver-manager start &'
+				sh 'sudo docker build --tag jenkins_image docker_testenv/.
+				sh 'sudo docker run --name=testenv -d -v $WORKSPACE/app:/app -p 8000:8000 jenkins_image'
+				sh 'protractor protractor.conf.js'
 			}
 		}
 		stage('Deploy') {
@@ -20,6 +35,7 @@ pipeline {
 			}
 		}
     }
+	
 	post {
         always {
             echo 'One way or another, I have finished'
