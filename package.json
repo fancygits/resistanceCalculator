@@ -16,7 +16,7 @@
     "karma-jasmine": "^1.1.1",
     "karma-junit-reporter": "^1.2.0",
     "protractor-html-screenshot-reporter": "0.0.21",
-    "puppeteer": "^1.4.0"
+    "puppeteer": "1.4.0"
   },
   "scripts": {
     "test": "karma start",

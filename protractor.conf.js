@@ -9,7 +9,7 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome',
 	chromeOptions: {
-		binary: "/vagrant/bitbucket/cs6261_project5/node_modules/puppeteer/.local-chromium/linux-564778/chrome-linux/chrome",
+		binary: "/vagrant/bitbucket/cs6261_project5/node_modules/puppeteer/.local-chromium/linux-555668/chrome-linux/chrome",
 		args: [ "--headless", "--disable-gpu", "--window-size=800x600", "--no-sandbox"]
    }
   },
