@@ -19,7 +19,8 @@ module.exports = function(config) {
 		'includes/angular-route.min.js',
 		'includes/angular-mocks.min.js',
 		'app/js/resistorCalculatorApp.js',
-		'tests/unit/resistorControllerGetAuthorSpec.js'
+		'tests/unit/resistorControllerGetAuthorSpec.js',
+		'tests/unit/resistorControllerGetColorsSpec.js'
     ],
 
 
@@ -64,10 +65,10 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: 1
   })
 }

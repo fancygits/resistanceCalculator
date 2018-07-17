@@ -1,0 +1,19 @@
+<title>6-band Resistor Calculator</title>
+
+<h2 id='welcome'>6-Band Resistor Color-code Calculator</h2>
+
+<form id="calculator">
+	<div class="form-group row" ng-repeat="band in ctrl.sixBand">
+		<label for="{{ctrl.bandIndex[band]}}band"
+			   class="col-form-label col-sm-4">
+			{{ ctrl.bandIndex[band] }} Band:
+		</label>
+		<select class="form-control form-control-lg col-sm-7"
+				id="{{ctrl.bandIndex[band]}}">
+			<option ng-repeat="color in ctrl.getColors(band)"
+					style="background-color: {{color}};">
+				{{color}}
+			</option>
+		</select>
+	</div>
+</form>
