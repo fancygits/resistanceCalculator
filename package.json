@@ -1,5 +1,5 @@
 {
-  "name": "resistorCalculator",
+  "name": "resistorApp",
   "version": "1.0.0",
   "description": "A single-page application that calculates resistance based on color-codes",
   "main": "app/index.html",

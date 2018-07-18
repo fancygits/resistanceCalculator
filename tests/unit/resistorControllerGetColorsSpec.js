@@ -1,5 +1,5 @@
 describe('resistorController#getColors', function() {
-	beforeEach(module('resistorCalculator'));
+	beforeEach(module('resistorApp'));
 
 	var ctrl;
 
@@ -24,10 +24,10 @@ describe('resistorController#getColors', function() {
 	});
 
 	it('should return 9 colors for the tolerance band', function() {
-		expect(ctrl.getColors(6)).toEqual(["brown", "red", "green", "blue", "violet", "grey", "gold", "silver", "blank"]);
+		expect(ctrl.getColors(5)).toEqual(["brown", "red", "green", "blue", "violet", "grey", "gold", "silver", "blank"]);
 	});
 
 	it('should return 9 colors for the temperature coefficient band', function() {
-		expect(ctrl.getColors(7)).toEqual(["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey"]);
+		expect(ctrl.getColors(6)).toEqual(["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey"]);
 	});
 });
