@@ -37,13 +37,10 @@ app.controller('resistorController', function(resistanceCalculator) {
 	];
 
 	self.bandIndex = ['color', '1st', '2nd', '3rd', 'Multiplier', 'Tolerance', 'Thermal Coefficient'];
-	self.threeBand = [1, 2, 4];
-	self.fourBand =  [1, 2, 4, 5];
-	self.fiveBand =  [1, 2, 3, 4, 5];
-	self.sixBand = 	 [1, 2, 3, 4, 5, 6];
-	self.bandCount = self.threeBand;
+	self.bandCount = [1, 2, 4];
 
 	self.setBandCount = function(bandCount) {
+		self.resistor = [];
 		if (bandCount === 3) {
 			self.bandCount = [1, 2, 4];
 		} else if (bandCount === 4) {
@@ -57,7 +54,6 @@ app.controller('resistorController', function(resistanceCalculator) {
 
 	self.getBandValue = function(color, column) {
 		for (var row = 0; row < self.bands.length; row++) {
-			//console.log(self.bands[row][0]);
 			if (self.bands[row][0] === color) {
 				return self.bands[row][column];
 			}
@@ -83,7 +79,7 @@ app.factory('resistanceCalculator', function() {
 	return {
 		calculateResistance: function(resistor) {
 			var resistance = "", sum = "", significantDigits = "", tolerance = "", temperature = "";
-			for (var band = 1; band < 3; band++) {
+			for (var band = 1; band < 4; band++) {
 				if (resistor[band] != null) {
 					sum += resistor[band];
 				}
