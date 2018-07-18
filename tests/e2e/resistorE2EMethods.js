@@ -10,10 +10,6 @@ module.exports = {
 		browser.get('/');
 	},
 
-	goToHome: function() {
-		element(by.id('mainLink')).click();
-	},
-
 	goTo3Band: function() {
 		element(by.id('3BandLink')).click();
 	},
