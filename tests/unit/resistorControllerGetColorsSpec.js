@@ -19,12 +19,12 @@ describe('resistorController#getColors', function() {
 		expect(ctrl.getColors(3)).toEqual(["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]);
 	});
 
-	it('should return 12 colors for the multiplier band', function() {
-		expect(ctrl.getColors(4)).toEqual(["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"]);
+	it('should return 13 colors for the multiplier band', function() {
+		expect(ctrl.getColors(4)).toEqual(["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver", "pink"]);
 	});
 
-	it('should return 9 colors for the tolerance band', function() {
-		expect(ctrl.getColors(5)).toEqual(["brown", "red", "green", "blue", "violet", "grey", "gold", "silver", "blank"]);
+	it('should return 10 colors for the tolerance band', function() {
+		expect(ctrl.getColors(5)).toEqual(["brown", "red", "yellow", "green", "blue", "violet", "grey", "gold", "silver", "blank"]);
 	});
 
 	it('should return 9 colors for the temperature coefficient band', function() {

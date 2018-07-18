@@ -1,8 +1,37 @@
 <title>Resistor Calculator</title>
 
-<h2 id='welcome'>To begin, choose the number of colored bands on the resistor above.</h2>
+<h2 id="welcome" class="hover" title="This app was created by {{ctrl.author}}">
+	Resistor Color-code Calculator
+</h2>
 
+<nav class="nav nav-tabs">
+	<a class="nav-link disabled">Number of color bands:</a>
+	<a class="nav-link"
+	   ng-repeat="count in [3,4,5,6]"
+	   ng-class="{active : ctrl.bandCount.length === count}"
+	   href="#!home"
+	   ng-click="ctrl.setBandCount(count)" id="{{count}}BandLink">
+		{{count}} Bands
+	</a>
+</nav>
 
-<p>
-  This app was written by {{ctrl.author}}.
-</p>
+<form name="calculator" id="calculator">
+	<div class="form-group row" ng-repeat="band in ctrl.bandCount">
+		<label for="{{ctrl.bandIndex[band]}}band"
+			   class="col-form-label col-sm-4">
+			{{ ctrl.bandIndex[band] }} Band:
+		</label>
+		<select class="form-control form-control-lg col-sm-7"
+				id="{{ctrl.bandIndex[band]}}"
+				ng-model="ctrl.resistor[band]"
+				ng-required='true'>
+			<option ng-repeat="color in ctrl.getColors(band)"
+					style="background-color: {{color}};"
+					value="{{ctrl.getBandValue(color, band)}}">
+				{{color}}
+			</option>
+		</select>
+	</div>
+</form>
+
+<h2 ng-hide="!calculator.$valid">Resistance: {{ctrl.getResistance()}}</h2>
