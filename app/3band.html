@@ -2,8 +2,18 @@
 
 <h2 id='welcome'>3-Band Resistor Color-code Calculator</h2>
 
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+		<a class="nav-link disabled">Number of color bands:</a>
+		<button ng-click="ctrl.setBandCount(3)" id="3BandLink">3 Bands</button>
+		<button ng-click="ctrl.setBandCount(4)" id="4BandLink">4 Bands</button>
+		<button ng-click="ctrl.setBandCount(5)" id="5BandLink">5 Bands</button>
+		<button ng-click="ctrl.setBandCount(6)" id="6BandLink">6 Bands</button>
+
+	</nav>
+
+
 <form name="calculator" id="calculator">
-	<div class="form-group row" ng-repeat="band in ctrl.threeBand">
+	<div class="form-group row" ng-repeat="band in ctrl.bandCount">
 		<label for="{{ctrl.bandIndex[band]}}band"
 			   class="col-form-label col-sm-4">
 			{{ ctrl.bandIndex[band] }} Band:
@@ -19,7 +29,7 @@
 			</option>
 		</select>
 	</div>
-
-	<h2 ng-hide="!calculator.$valid">Resistance: {{ctrl.getResistance()}}</h2>
 </form>
-Resistor: {{ctrl.resistor}}<br>
+
+<p>Resistor: {{ctrl.resistor}}</p>
+<h2 ng-hide="!calculator.$valid">Resistance: {{ctrl.getResistance()}}</h2>

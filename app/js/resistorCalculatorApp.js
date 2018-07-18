@@ -56,6 +56,19 @@ app.controller('resistorController', function(resistanceCalculator) {
 	self.fourBand =  [1, 2, 4, 5];
 	self.fiveBand =  [1, 2, 3, 4, 5];
 	self.sixBand = 	 [1, 2, 3, 4, 5, 6];
+	self.bandCount = self.threeBand;
+
+	self.setBandCount = function(bandCount) {
+		if (bandCount === 3) {
+			self.bandCount = [1, 2, 4];
+		} else if (bandCount === 4) {
+			self.bandCount = [1, 2, 4, 5];
+		} else if (bandCount === 5) {
+			self.bandCount = [1, 2, 3, 4, 5];
+		} else {
+			self.bandCount = [1, 2, 3, 4, 5, 6];
+		}
+	}
 
 	self.getColors = function(column) {
 		var colors = [];
@@ -94,6 +107,8 @@ app.factory('resistanceCalculator', function() {
 	}
 });
 
+
+/** Inspired by https://stackoverflow.com/questions/10599933/convert-long-number-into-abbreviated-string-in-javascript-with-a-special-shortn **/
 function numberSuffix(longNumber) {
 	if (longNumber === 0) {
 		return '0Ω';

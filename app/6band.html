@@ -9,11 +9,16 @@
 			{{ ctrl.bandIndex[band] }} Band:
 		</label>
 		<select class="form-control form-control-lg col-sm-7"
-				id="{{ctrl.bandIndex[band]}}">
+				id="{{ctrl.bandIndex[band]}}"
+				ng-model="ctrl.resistor[band]"
+				ng-required='true'>
 			<option ng-repeat="color in ctrl.getColors(band)"
-					style="background-color: {{color}};">
+					style="background-color: {{color}};"
+					value="{{ctrl.bands[$index][band]}}">
 				{{color}}
 			</option>
 		</select>
 	</div>
 </form>
+<p>Resistor: {{ctrl.resistor}}</p>
+<h2 ng-hide="!calculator.$valid">Resistance: {{ctrl.getResistance()}}</h2>
