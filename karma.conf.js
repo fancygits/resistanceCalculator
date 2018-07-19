@@ -22,8 +22,7 @@ module.exports = function(config) {
 		'tests/unit/resistorControllerGetAuthorSpec.js',
 		'tests/unit/resistorControllerGetColorsSpec.js',
 		'tests/unit/resistorControllerSetBandCountSpec.js',
-		'tests/unit/resistorControllerGetBandValueSpec.js',
-		'tests/unit/resistorControllerGetResistanceSpec.js'
+		'tests/unit/resistorControllerGetBandValueSpec.js'
     ],
 
 

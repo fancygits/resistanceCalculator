@@ -20,7 +20,7 @@ app.controller('resistorController', function(resistanceCalculator) {
 	self.bands = [
 	// 	Data taken from https://en.wikipedia.org/wiki/Electronic_color_code#Resistor_color-coding
 	//  [color, 	1st, 	2nd, 	3rd, 	multiplier,	tol., 	temp]
-		['black', 	0, 		0, 		0, 		1,			null,	250],
+		['black', 	null, 	0, 		0, 		1,			null,	250],
 		['brown',	1, 		1, 		1, 		10,			1, 		100],
 		['red', 	2, 		2, 		2, 		100,		2, 		50],
 		['orange', 	3, 		3, 		3, 		1000,		null,	15],

@@ -5,7 +5,7 @@
 </h2>
 
 <nav class="nav nav-tabs">
-	<a class="nav-link disabled">Number of color bands:</a>
+	<a class="nav-link disabled d-none d-md-block">Number of color bands:</a>
 	<a class="nav-link"
 	   ng-repeat="count in [3,4,5,6]"
 	   ng-class="{active : ctrl.bandCount.length === count}"
@@ -34,4 +34,4 @@
 	</div>
 </form>
 
-<h2 ng-hide="!calculator.$valid">Resistance: {{ctrl.getResistance()}}</h2>
+<h2 ng-hide="!calculator.$valid" id="resistance">Resistance: {{ctrl.getResistance()}}</h2>
