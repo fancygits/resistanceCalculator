@@ -34,7 +34,7 @@ pipeline {
 			steps {
 				echo 'Deploying...'
 				sh 'docker build --tag jenkins_final .'
-				sh 'docker run --name=resistorCalculator -d -v $WORKSPACE/app:/app -p 3000:3000 jenkins_final' || true
+				sh 'docker run --name=resistorCalculator -d -v $WORKSPACE/app:/app -p 3000:3000 jenkins_final || true'
 			}
 		}
     }
