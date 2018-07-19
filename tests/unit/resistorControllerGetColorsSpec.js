@@ -7,8 +7,8 @@ describe('resistorController#getColors', function() {
 		ctrl = $controller('resistorController');
 	}));
 
-	it('should return 10 colors for the 1st band', function() {
-		expect(ctrl.getColors(1)).toEqual(["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]);
+	it('should return 9 colors for the 1st band', function() {
+		expect(ctrl.getColors(1)).toEqual(["brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]);
 	});
 
 	it('should return 10 colors for the 2nd band', function() {
