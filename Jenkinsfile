@@ -27,13 +27,14 @@ pipeline {
 				sh 'docker run --name=testenv -d -v $WORKSPACE/app:/app -p 8000:8000 jenkins_image'
 				sh 'protractor protractor.conf.js'
 				sh 'docker stop testenv'
-				sh 'docker rm testenv'
+				sh 'docker rm testenv' || true
 			}
 		}
 		stage('Deploy') {
 			steps {
 				echo 'Deploying...'
-				echo 'Not yet implemented'
+				sh 'docker build --tag jenkins_final docker_testenv/.'
+				sh 'docker run --name=resistorCalculator -d -v $WORKSPACE/app:/app -p 3000:3000 jenkins_final' || true
 			}
 		}
     }
