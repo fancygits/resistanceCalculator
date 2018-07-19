@@ -27,7 +27,7 @@ pipeline {
 				sh 'docker run --name=testenv -d -v $WORKSPACE/app:/app -p 8000:8000 jenkins_image'
 				sh 'protractor protractor.conf.js'
 				sh 'docker stop testenv'
-				sh 'docker rm testenv' || true
+				sh 'docker rm testenv'
 			}
 		}
 		stage('Deploy') {
